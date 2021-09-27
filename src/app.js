@@ -4,6 +4,8 @@ const hbs = require('hbs')
 const forecast = require('./utils/forecast')
 const geocode = require('./utils/geocode')
 
+//setting up the port, both remotely and locally
+const port = process.env.PORT || 3030
 
 //setup express configurations
 const app = express()
@@ -105,6 +107,6 @@ app.get('*', (req, res)=>{
     })
 })
 
-app.listen(3030, ()=>{
-    console.log("Server is on")
+app.listen(port , ()=>{
+    console.log("Server is on port ", port)
 })
